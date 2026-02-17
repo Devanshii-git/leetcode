@@ -2,16 +2,16 @@ import java.util.*;
 
 class Solution {
     public List<String> readBinaryWatch(int turnedOn) {
-        List<String> result = new ArrayList<>();
-        
-        for (int hour = 0; hour < 12; hour++) {
-            for (int minute = 0; minute < 60; minute++) {
-                if (Integer.bitCount(hour) + Integer.bitCount(minute) == turnedOn) {
-                    result.add(String.format("%d:%02d", hour, minute));
+        List<String> res = new ArrayList<>();
+
+        for (int h = 0; h < 12; h++) {
+            for (int m = 0; m < 60; m++) {
+                if (Integer.bitCount(h) + Integer.bitCount(m) == turnedOn) {
+                    res.add(h + ":" + String.format("%02d", m));
                 }
             }
         }
-        
-        return result;
+
+        return res;
     }
 }
